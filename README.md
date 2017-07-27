@@ -20,6 +20,7 @@ Theano is especially useful for machine learning.
 ## Define function - Overview
 E.g. Define a function f(x) = x2, then compute f(-2)
 ```python
+-L
 1 import theano
 2 
 3 x = theano.tensor.scalar()
@@ -28,6 +29,7 @@ E.g. Define a function f(x) = x2, then compute f(-2)
 6 
 7 print f(-2)
 ```
+https://github.com/waterljwant/Theano/blob/master/Code/test_01.py#L1-L5
 Step 0. Declare that you want to use Theano (line 1)   
 Step 1. Define input variable x (line 3)   
 Step 2. Define output variable y (line 4)   
