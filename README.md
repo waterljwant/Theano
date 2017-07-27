@@ -120,3 +120,20 @@ f = theano.function([x1, x2], [y1, y2])
 z = f(2,4)
 print z
 ```
+### Step 4. Use Function
+Line 12: simply use the function f you declared as a normal
+python function
+Line 13: Print the function output ->
+
+(The theano function output is a numpy.ndarray.)
+Examples for Matrix
+Be careful that the dimensions of the input
+matrices should be correct.
+
+## Compute Gradients
+
+• Computing the gradients with respect to a variable is so simple.   
+• Given a function with input variable x and output variable y   
+• To compute dy/dx, simply g = T.grad( y , x )  
+• Note: To compute the gradient, y should be a scalar.  
+• That’s it!
