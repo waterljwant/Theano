@@ -19,15 +19,15 @@ Theano is especially useful for machine learning.
 	* In deep learning, this is usually done by gradient descent.
 ## Define function - Overview
 E.g. Define a function f(x) = x2, then compute f(-2)
-'''python
+
     import theano
 
-     x = theano.tensor.scalar()
-     y = x**2
+    x = theano.tensor.scalar()
+    y = x**2
     f = theano.function([x],y)
 
     print f(-2)
-'''
+
 Step 0. Declare that you want to use Theano (line 1)
 Step 1. Define input variable x (line 3)
 Step 2. Define output variable y (line 4)
