@@ -65,15 +65,50 @@ simplification
 ```python?linenums
 import theano
 import theano.tensor as T
+a = T.scalar()
+b = T.matrix()
+c = T.matrix('ming zi')
+print a
+print b
+print c
+```
+```dos
+<TensorType(float32, scalar)>
+<TensorType(float32, matrix)>
+ming zi
+```
+### Step2. Define Output Variables
+Output variables are defined based on their
+relations with the input variables
+• Below are some examples
+```python?linenums
+import theano
+import theano.tensor as T
 x1 = T.scalar()
 x2 = T.scalar()
 x3 = T.matrix()
 x4 = T.matrix()
+y1 = x1 + x2
+y2 = x1 * x2
+y3 = x3 * x4
+y4 = T.dot(x3, x4)
 ```
-Step2. Define Output Variables
-Output variables are defined based on their
-relations with the input variables
-• Below are some examples
+y1 equals to x1 plus x2
+y2 equals to x1 times x2
+y3 is the elementwise multiplication of x3 and x4
+y4 is the matrix multiplication of x3 and x4
+### Step 3. Declare Function
+```python
+f = theano.function([x], y)
+```
+Declare the function as f
+Function input: x
+Function output: y
+Note: the input of a function should be a list.
+That is, always put the input in “[ ]”
+
+Define the function input and output explicitly.
+(equivalent to the above usage)
 ```python?linenums
 import theano
 import theano.tensor as T
@@ -85,7 +120,3 @@ f = theano.function([x1, x2], [y1, y2])
 z = f(2,4)
 print z
 ```
-y1 equals to x1 plus x2
-y2 equals to x1 times x2
-y3 is the elementwise multiplication of x3 and x4
-y4 is the matrix multiplication of x3 and x4
