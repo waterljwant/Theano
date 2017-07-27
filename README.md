@@ -61,5 +61,13 @@ Line 7,8,9: let’s print the three variables a, b, c to see
 what we get
 
 a, b, c are symbols without any values
-
+simplification
+```python?linenums
+import theano
+import theano.tensor as T
+x1 = T.scalar()
+x2 = T.scalar()
+x3 = T.matrix()
+x4 = T.matrix()
+```
 
