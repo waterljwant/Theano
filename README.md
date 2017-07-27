@@ -64,7 +64,7 @@ a, b, c are symbols without any values
 simplification
 ```python?linenums
 import theano
->>==import theano.tensor as T==<<
+import theano.tensor as T
 x1 = T.scalar()
 x2 = T.scalar()
 x3 = T.matrix()
