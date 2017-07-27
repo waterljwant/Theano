@@ -20,7 +20,7 @@ Theano is especially useful for machine learning.
 ## Define function
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)
-```python
+```python?linenums
 import theano
 x = theano.tensor.scalar()
 y = x**2
@@ -34,7 +34,7 @@ Step 2. Define output variable y (line 3)
 Step 3. Declare the function as f (line 4)   
 Step 4. Use the function f (line 5)   
 We can do the same thing by python as,
-```python
+```python?linenums
 def f(x):
 	return x**2
 print f(-2)
@@ -42,7 +42,7 @@ print f(-2)
 So why we define a function by Theano.
 It will be clear when we compute the gradients.
 ### Step1. Define Input Variables
-```python
+```python?linenums
 import theano
 a = theano.tensor.scalar()
 b = theano.tensor.matrix()
@@ -64,10 +64,28 @@ a, b, c are symbols without any values
 simplification
 ```python?linenums
 import theano
-import theano.tensor as T
+>>==import theano.tensor as T==<<
 x1 = T.scalar()
 x2 = T.scalar()
 x3 = T.matrix()
 x4 = T.matrix()
 ```
-
+Step2. Define Output Variables
+Output variables are defined based on their
+relations with the input variables
+• Below are some examples
+```python?linenums
+import theano
+import theano.tensor as T
+x1 = T.scalar()
+x2 = T.scalar()
+y1 = x1 * x2
+y2 = x1 **2 + x2 ** 0.5
+f = theano.function([x1, x2], [y1, y2])
+z = f(2,4)
+print z
+```
+y1 equals to x1 plus x2
+y2 equals to x1 times x2
+y3 is the elementwise multiplication of x3 and x4
+y4 is the matrix multiplication of x3 and x4
