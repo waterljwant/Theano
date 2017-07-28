@@ -204,7 +204,7 @@ g = [b1 b2; b3 b4]
 
 You cannot compute the gradients of C because it is not a scalar.
 
-Single Neuron
+## Single Neuron
 First, let’s implement a neuron
 ```python?linenums
 import theano
