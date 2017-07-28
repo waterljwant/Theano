@@ -233,3 +233,91 @@ Single Neuron – Shared Variables
 • It would be more intuitive if we only have to write “neuron(x)” when using a neuron
 • The model parameters w and b still influence neuron(.), but in an implicit way.
 • In Theano, the model parameters are usually stored as shared variables.
+```python?linenums
+import theano
+import theano.tensor as T
+import random
+import numpy
+x = T.vector()
+w = theano.shared(numpy.array([1.,1.]))
+b = theano.shared(0.)
+z = T.dot(w,x) + b
+y = 1/(1+T.exp(-z))
+neuron = theano.function(inputs=[x],outputs=[y], allow_input_downcast=True)
+print w.get_value()
+w.set_value([0.,0.1])
+for i in range(100):
+	print i
+	x = [random.random(), random.random()]
+	print x
+	print neuron(x)
+```
+Single Neuron – Training
+Define a cost function C
+Then compute ∂C
+∂w1
+,
+∂C
+∂w2
+, ⋯ ,
+∂C
+∂wN
+
+and ∂C
+```python?linenums
+import theano
+import theano.tensor as T
+import random
+import numpy
+x = T.vector()
+w = theano.shared(numpy.array([-1.,1.]))
+b = theano.shared(0.)
+z = T.dot(w,x) + b
+y = 1/(1+T.exp(-z))
+neuron = theano.function(inputs=[x],outputs=[y], allow_input_downcast=True)
+y_hat = T.scalar()
+cost = T.sum((y-y_hat)**2)
+dw,db = T.grad(cost,[w,b])
+
+#--- 01 --- & Gradient Descent --- Tedious
+gradient = theano.function(inputs=[x,y_hat],outputs=[dw,db], allow_input_downcast=True)
+x = [1, -1]
+y_hat = 1
+for i in range(100):
+	print i
+	print neuron(x)
+	dw,db = 
+	w.set_value(w.get_value() - 0.1*dw)
+	b.set_value(b.get_value() - 0.1*db)
+	print w.get_value(),b.get_value()
+```
+Line 31: use the function gradient (defined in the last page) to compute the gradients
+Line 32, 33: use the gradients to update the model parameters
+```python?linenums
+import theano
+import theano.tensor as T
+import random
+import numpy
+x = T.vector()
+w = theano.shared(numpy.array([-1.,1.]))
+b = theano.shared(0.)
+z = T.dot(w,x) + b
+y = 1/(1+T.exp(-z))
+neuron = theano.function(inputs=[x],outputs=[y], allow_input_downcast=True)
+y_hat = T.scalar()
+cost = T.sum((y-y_hat)**2)
+dw,db = T.grad(cost,[w,b])
+# Gradient Descent --- Effective
+gradient = theano.function(
+	inputs=[x,y_hat],
+	updates=[(w,w-0.1*dw),(b,b-0.1*db)], 
+	allow_input_downcast=True
+	)
+x = [1, -1]
+y_hat = 1
+for i in range(100):
+	print i
+	print neuron(x)
+	gradient(x,y_hat)
+	print w.get_value(),b.get_value()
+```
