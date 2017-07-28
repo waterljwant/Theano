@@ -39,8 +39,8 @@ def f(x):
 	return x**2
 print f(-2)
 ```
-So why we define a function by Theano.
-It will be clear when we compute the gradients.
+So why we define a function by Theano?
+**It will be clear when we compute the gradients.**
 ### Step1. Define Input Variables
 ```python?linenums
 import theano
@@ -146,11 +146,11 @@ If B = [b1 b2; b3 b4]
 (Note that the dimensions of A and B is not necessary 2 X 2.
 Here is just an example.)
 
-C =[a1b1 a2b2; a3b3 a4b4]
+C = [a1b1 a2b2; a3b3 a4b4]
 
 D = a1b1 + a2b2 + a3b3 + a4b4
 
-g =[b1 b2; b3 b4]
+g = [b1 b2; b3 b4]
 
 (line 7)
 
