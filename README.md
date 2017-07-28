@@ -1,5 +1,7 @@
 # Theano
 Introduce theano from the beginning, so you can build your own DNN by it.
+Reference: [Hung-yi Lee Machine Learning](
+http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Theano%20DNN.ecm.mp4/index.html)
 ## Introduction of Theano
 Theano is a Python library that lets you to define, optimize, and evaluate mathematical expressions.
 Theano is especially useful for machine learning.
