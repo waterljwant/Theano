@@ -321,3 +321,45 @@ for i in range(100):
 	gradient(x,y_hat)
 	print w.get_value(),b.get_value()
 ```
+In deep learning, usually sophisticated update strategy is needed.
+
+What is izip?
+https://docs.python.org/2/library/itertools.html#itertools.izip
+In this case, you may want to use a function to return
+the pair list for parameter update.
+Code:
+```python?linenums
+import theano
+import theano.tensor as T
+import random
+import numpy
+from itertools import izip
+x = T.vector()
+w = theano.shared(numpy.array([-1.,1.]))
+b = theano.shared(0.)
+z = T.dot(w,x) + b
+y = 1/(1+T.exp(-z))
+neuron = theano.function(inputs=[x],outputs=[y], allow_input_downcast=True)
+y_hat = T.scalar()
+cost = T.sum((y-y_hat)**2)
+dw,db = T.grad(cost,[w,b])
+# Gradient Descent --- Effective
+def MyUpdate(paramters,gradients):
+	mu = 0.1
+	paramters_updates = \
+	[(p, p-mu*g) for p,g in izip(paramters,gradients)]
+	return paramters_updates
+
+gradient = theano.function(
+	inputs=[x,y_hat],
+	updates=MyUpdate([w,b],[dw,db])
+	)
+
+x = [1, -1]
+y_hat = 1
+for i in range(100):
+	print i
+	print neuron(x)
+	gradient(x,y_hat)
+	print w.get_value(),b.get_value()
+```	
