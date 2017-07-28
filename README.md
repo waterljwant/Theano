@@ -42,6 +42,7 @@ print f(-2)
 So why we define a function by Theano?
 **It will be clear when we compute the gradients.**
 ### Step1. Define Input Variables
+Code: input   
 ```python?linenums
 import theano
 a = theano.tensor.scalar()
@@ -81,6 +82,7 @@ ming zi
 Output variables are defined based on their
 relations with the input variables
 • Below are some examples
+Code: output
 ```python?linenums
 import theano
 import theano.tensor as T
@@ -109,6 +111,7 @@ That is, always put the input in “[ ]”
 
 Define the function input and output explicitly.
 (equivalent to the above usage)
+Code: function   
 ```python?linenums
 import theano
 import theano.tensor as T
@@ -137,8 +140,49 @@ matrices should be correct.
 • To compute dy/dx, simply g = T.grad( y , x )  
 • Note: To compute the gradient, y should be a scalar.  
 • That’s it!
+Example 1
+Code: gradient_example_1
+```python?linenums
+import theano
+import theano.tensor as T
+x = T.scalar('x')
+y = x ** 2
+g = T.grad(y, x)
+f = theano.function([x], y)
+f_prime = theano.function([x], g)
+print f(-2)
+print f_prime(-2)
+```
+Example 2
+Code: gradient_example_2
+```python?linenums
+import theano
+import theano.tensor as T
+x1 = T.scalar()
+x2 = T.scalar()
+y = x1 * x2
+g = T.grad(y, [x1, x2])
+f = theano.function([x1,x2], y)
+f_prime = theano.function([x1,x2], g)
+print f(2,4)
+print f_prime(2,4)
+```
 Example 3
-.
+Code: gradient_example_3
+```python?linenums
+import theano
+import theano.tensor as T
+A = T.matrix()
+B = T.matrix()
+C = A * B
+D = T.sum(C)
+g = T.grad(D, A)
+y_prime = theano.function([A,B], g)
+A = [[1,2], [3,4]]
+B = [[2,4], [6,8]]
+print y_prime(A, B)
+```
+
 If A = [a1 a2; a3 a4]
 
 If B = [b1 b2; b3 b4]
@@ -162,6 +206,24 @@ You cannot compute the gradients of C because it is not a scalar.
 
 Single Neuron
 First, let’s implement a neuron
+```python?linenums
+import theano
+import theano.tensor as T
+import random
+x = T.vector()
+w = T.vector()
+b = T.scalar()
+z = T.dot(w,x) + b
+y = 1/(1+T.exp(-z))
+neuron = theano.function(inputs=[x,w,b],outputs=[y], allow_input_downcast=True)
+w = [-1,1]
+b = 0
+for i in range(100):
+	print i
+	x = [random.random(), random.random()]
+	print x
+	print neuron(x,w,b)
+```	
 In this stage, let’s assume the model parameters w and b are known
 
 Single Neuron – Shared Variables
