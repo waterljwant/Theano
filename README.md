@@ -137,3 +137,39 @@ matrices should be correct.
 • To compute dy/dx, simply g = T.grad( y , x )  
 • Note: To compute the gradient, y should be a scalar.  
 • That’s it!
+Example 3
+.
+If A =
+
+a1 a2
+a3 a4
+
+If B =
+
+b1 b2
+b3 b4
+
+(Note that the dimensions of
+A and B is not necessary 2 X 2.
+Here is just an example.)
+
+C =
+
+a1b1 a2b2
+a3b3 a4b4
+
+D = a1b1 + a2b2 + a3b3 + a4b4
+
+g =
+
+b1 b2
+b3 b4
+
+(line 7)
+
+(line 8)
+
+(line 10)
+
+You cannot compute the gradients
+of C because it is not a scalar
