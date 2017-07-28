@@ -139,31 +139,18 @@ matrices should be correct.
 • That’s it!
 Example 3
 .
-If A =
+If A = [a1 a2; a3 a4]
 
-a1 a2
-a3 a4
+If B = [b1 b2; b3 b4]
 
-If B =
-
-b1 b2
-b3 b4
-
-(Note that the dimensions of
-A and B is not necessary 2 X 2.
+(Note that the dimensions of A and B is not necessary 2 X 2.
 Here is just an example.)
 
-C =
-
-a1b1 a2b2
-a3b3 a4b4
+C =[a1b1 a2b2; a3b3 a4b4]
 
 D = a1b1 + a2b2 + a3b3 + a4b4
 
-g =
-
-b1 b2
-b3 b4
+g =[b1 b2; b3 b4]
 
 (line 7)
 
@@ -171,5 +158,16 @@ b3 b4
 
 (line 10)
 
-You cannot compute the gradients
-of C because it is not a scalar
+You cannot compute the gradients of C because it is not a scalar.
+
+Single Neuron
+First, let’s implement a neuron
+In this stage, let’s assume the model parameters w and b are known
+
+Single Neuron – Shared Variables
+
+• In the last example, a neuron is a function with input x, w and b.
+• However, we usually only consider x as input. w and b are model parameters.
+• It would be more intuitive if we only have to write “neuron(x)” when using a neuron
+• The model parameters w and b still influence neuron(.), but in an implicit way.
+• In Theano, the model parameters are usually stored as shared variables.
