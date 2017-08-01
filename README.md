@@ -4,6 +4,7 @@ Reference: Hung-yi Lee --- [Machine Learning](
 http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Theano%20DNN.ecm.mp4/index.html)   
 
 ---
+## Outline
 * Introduction of Theano
 * Review Machine Learning
 * [01 - Define function](#01---define-function)   
