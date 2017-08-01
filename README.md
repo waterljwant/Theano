@@ -36,7 +36,7 @@ Theano is especially useful for machine learning.
 	* In deep learning, this is usually done by gradient descent.
 ---
 
-### 01 - Define function
+## 01 - Define function
 
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
