@@ -21,19 +21,19 @@ Theano is especially useful for machine learning.
 	* In deep learning, this is usually done by gradient descent.
 ---
 # Theano for Deep Learning
-* [01 - Define function](#01Define_function)   
+* [01 - Define function](#01--define-function)   
 	* [Overview](#overview)   
-	* [Step1. Define Input Variables](#step1-define-input-variables)
-	* [Step2. Define Output Variables](#Step2. Define Output Variables)
-	* [Step 3. Declare Function](#Step 3. Declare Function)
-	* [Step 4. Use Function](#Step 4. Use Function)
-* [02 - Compute Gradients](#02 - Compute Gradients)
-* [03 - Single Neuron](#03 - Single Neuron)
-* [04 - Tiny Neural Network](#TinyNN)
+	* [Step 1. Define Input Variables](#step-1-define-input-variables)
+	* [Step 2. Define Output Variables](#step-2-define-output-variables)
+	* [Step 3. Declare Function](#step-3-declare-function)
+	* [Step 4. Use Function](#step-4-use-function)
+* [02 - Compute Gradients](#02--compute-gradients)
+* [03 - Single Neuron](#03--single-neuron)
+* [04 - Tiny Neural Network](#tinynn)
 * [1.语法示例](#1)
 ---
 
-<h2 id="01Define_function">01 - Define function</h2>
+### 01 - Define function
 
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
@@ -58,7 +58,7 @@ print f(-2)
 ```
 So why we define a function by Theano?
 **It will be clear when we compute the gradients.**
-### Step1. Define Input Variables
+### Step 1. Define Input Variables
 Code: input   
 ```python?linenums
 import theano
@@ -114,7 +114,7 @@ print c
 <TensorType(float32, matrix)>
 ming zi
 ```
-### Step2. Define Output Variables
+### Step 2. Define Output Variables
 Output variables are defined based on their
 relations with the input variables
 • Below are some examples
