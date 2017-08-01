@@ -32,9 +32,8 @@ Theano is especially useful for machine learning.
 * [03 - Single Neuron](#03 - Single Neuron)
 * [04 - Tiny Neural Network](#TinyNN)
 ---
-<h2 id="01Definefunction">## 01 - Define function</h2>
+<h2 id="01Definefunction">01 - Define function</h2>
 
-## 01 - Define function
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
 Code: [01_overview.py](https://github.com/waterljwant/Theano/blob/master/Code/01_overview.py#L1-L5)    
