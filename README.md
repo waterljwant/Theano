@@ -30,7 +30,7 @@ Theano is especially useful for machine learning.
 	* [Step 4. Use Function](#Step 4. Use Function)
 * [02 - Compute Gradients](#02 - Compute Gradients)
 * [03 - Single Neuron](#03 - Single Neuron)
-* [04 - Tiny Neural Network](#04TinyNN)
+* [04 - Tiny Neural Network](#TinyNN)
 ---
 ## 01 - Define function
 ### Overview
@@ -409,4 +409,4 @@ for i in range(100):
 	gradient(x,y_hat)
 	print w.get_value(),b.get_value()
 ```	
-## 04TinyNN
+## TinyNN
