@@ -55,11 +55,10 @@ print b
 print c
 ```
 A variable can be a scalar, a matrix or a tensor   
-Line 2: declare a scalar a
-Line 3: declare a matrix b
-Line 4: declare a matrix c with name “ming zi”
-
-The name of a variable only make difference when you try to print the variable.
+Line 2: declare a scalar a   
+Line 3: declare a matrix b   
+Line 4: declare a matrix c with name “ming zi”   
+The name of a variable only make difference when you try to print the variable.   
 Line 7,8,9: let’s print the three variables a, b, c to see what we get
 
 a, b, c are symbols without any values
