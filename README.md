@@ -1,10 +1,9 @@
 # Theano for Deep Learning   
 Introduce theano from the beginning, so you can build your own DNN by it.   
-Reference: Hung-yi Lee --- [Machine Learning](
+==Reference: Hung-yi Lee --- [Machine Learning]==(
 http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Theano%20DNN.ecm.mp4/index.html)   
 
 ## Outline
-
 * [Theano for Deep Learning](#theano-for-deep-learning)
 	* [Outline](#outline)
 	* [Introduction of Theano](#introduction-of-theano)
@@ -20,8 +19,8 @@ http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Theano%20DNN.ecm
 		* [Single Neuron – Shared Variables](#single-neuron-shared-variables)
 		* [Single Neuron – Training](#single-neuron-training)
 	* [Tiny Neural Network](#tiny-neural-network)
+----------
 
----
 ## Introduction of Theano
 Theano is a Python library that lets you to define, optimize, and evaluate mathematical expressions.
 Theano is especially useful for machine learning.
