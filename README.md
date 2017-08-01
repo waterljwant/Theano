@@ -19,7 +19,7 @@ Theano is especially useful for machine learning.
 * Define what is the best function: Define a cost function C(f)
 * Pick the best function by data: Training
 	* In deep learning, this is usually done by gradient descent.
-## Define function
+## 01 - Define function
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
 Code: [01_overview.py](https://github.com/waterljwant/Theano/blob/master/Code/01_overview.py#L1-L5)    
@@ -66,6 +66,8 @@ Line 7,8,9: let’s print the three variables a, b, c to see what we get
 ming zi
 ```
 a, b, c are symbols without any values
+
+We can give names to variables 
 ```python?linenums
 import theano
 x = theano.tensor.scalar('x')
@@ -80,6 +82,7 @@ We will get,
 5.0
 (x + y)
 ```
+
 Simplification
 ```python?linenums
 import theano
@@ -163,7 +166,7 @@ Examples for Matrix
 Be careful that the dimensions of the input
 matrices should be correct.
 
-## Compute Gradients
+## 02 - Compute Gradients
 
 • Computing the gradients with respect to a variable is so simple.   
 • Given a function with input variable x and output variable y   
@@ -234,7 +237,7 @@ g = [b1 b2; b3 b4]
 
 You cannot compute the gradients of C because it is not a scalar.
 
-## Single Neuron
+## 03 - Single Neuron
 First, let’s implement a neuron
 ```python?linenums
 import theano
@@ -256,7 +259,7 @@ for i in range(100):
 ```	
 In this stage, let’s assume the model parameters w and b are known
 
-Single Neuron – Shared Variables
+### Single Neuron – Shared Variables
 
 • In the last example, a neuron is a function with input x, w and b.
 • However, we usually only consider x as input. w and b are model parameters.
@@ -282,7 +285,7 @@ for i in range(100):
 	print x
 	print neuron(x)
 ```
-Single Neuron – Training
+### Single Neuron – Training
 Define a cost function C
 Then compute ∂C
 ∂w1
