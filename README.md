@@ -60,10 +60,23 @@ Line 3: declare a matrix b
 Line 4: declare a matrix c with name “ming zi”
 
 The name of a variable only make difference when you try to print the variable.
-Line 7,8,9: let’s print the three variables a, b, c to see
-what we get
+Line 7,8,9: let’s print the three variables a, b, c to see what we get
 
 a, b, c are symbols without any values
+```python?linenums
+import theano
+x = theano.tensor.scalar('x')
+y = theano.tensor.scalar('y')
+z = x + y
+f = theano.function([x,y],z)
+print f(2, 3)
+print theano.pp(z)
+```
+We will get,
+```dos?linenums
+5.0
+(x + y)
+```
 simplification
 ```python?linenums
 import theano
@@ -124,6 +137,19 @@ y2 = x1 **2 + x2 ** 0.5
 f = theano.function([x1, x2], [y1, y2])
 z = f(2,4)
 print z
+```
+
+default value and name for a function
+```python?linenums
+import theano
+import theano.tensor as T
+x, y, w = T.scalars('x', 'y', 'w')
+z = (x+y)*w
+f = theano.function([x,
+	theano.In(y, value=1),
+	theano.In(w, value=2, name='weights')],
+	z)
+print f(23, 2, weights=4)
 ```
 ### Step 4. Use Function
 Line 12: simply use the function f you declared as a normal
