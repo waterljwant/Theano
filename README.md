@@ -1,7 +1,20 @@
-# Theano
+# Theano for Deep Learning
 Introduce theano from the beginning, so you can build your own DNN by it.   
 Reference: Hung-yi Lee --- [Machine Learning](
 http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/Theano%20DNN.ecm.mp4/index.html)
+---
+* Introduction of Theano
+* Review Machine Learning
+* [01 - Define function](#01---define-function)   
+	* [Overview](#overview)   
+	* [Step 1. Define Input Variables](#step-1-define-input-variables)
+	* [Step 2. Define Output Variables](#step-2-define-output-variables)
+	* [Step 3. Declare Function](#step-3-declare-function)
+	* [Step 4. Use Function](#step-4-use-function)
+* [02 - Compute Gradients](#02---compute-gradients)
+* [03 - Single Neuron](#03---single-neuron)
+* [04 - Tiny Neural Network](#tiny-neural-network)
+---
 ## Introduction of Theano
 Theano is a Python library that lets you to define, optimize, and evaluate mathematical expressions.
 Theano is especially useful for machine learning.
@@ -19,17 +32,6 @@ Theano is especially useful for machine learning.
 * Define what is the best function: Define a cost function C(f)
 * Pick the best function by data: Training
 	* In deep learning, this is usually done by gradient descent.
----
-# Theano for Deep Learning
-* [01 - Define function](#01---define-function)   
-	* [Overview](#overview)   
-	* [Step 1. Define Input Variables](#step-1-define-input-variables)
-	* [Step 2. Define Output Variables](#step-2-define-output-variables)
-	* [Step 3. Declare Function](#step-3-declare-function)
-	* [Step 4. Use Function](#step-4-use-function)
-* [02 - Compute Gradients](#02---compute-gradients)
-* [03 - Single Neuron](#03---single-neuron)
-* [04 - Tiny Neural Network](#tiny-neural-network)
 ---
 
 ### 01 - Define function
