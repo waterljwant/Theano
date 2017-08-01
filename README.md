@@ -23,7 +23,7 @@ Theano is especially useful for machine learning.
 # Theano for Deep Learning
 * [01 - Define function](#01Define_function)   
 	* [Overview](#overview)   
-	* [Step1. Define Input Variables](#Step1-Define-Input-Variables)
+	* [Step1. Define Input Variables](#step1-sefine-input-variables)
 	* [Step2. Define Output Variables](#Step2. Define Output Variables)
 	* [Step 3. Declare Function](#Step 3. Declare Function)
 	* [Step 4. Use Function](#Step 4. Use Function)
