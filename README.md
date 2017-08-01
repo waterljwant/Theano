@@ -21,7 +21,7 @@ Theano is especially useful for machine learning.
 	* In deep learning, this is usually done by gradient descent.
 ---
 # Theano for Deep Learning
-* [01 - Define function](#01 - Define function)   
+* [01 - Define function](#01Definefunction)   
 	* [Overview](#Overview)   
 	* [Step1. Define Input Variables](#Step1. Define Input Variables)
 	* [Step1. Define Input Variables](#StepDefineInputVariables)
@@ -32,6 +32,7 @@ Theano is especially useful for machine learning.
 * [03 - Single Neuron](#03 - Single Neuron)
 * [04 - Tiny Neural Network](#TinyNN)
 ---
+<h2 id="01Definefunction">1.语法示例</h2>
 ## 01 - Define function
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
