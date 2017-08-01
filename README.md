@@ -19,6 +19,17 @@ Theano is especially useful for machine learning.
 * Define what is the best function: Define a cost function C(f)
 * Pick the best function by data: Training
 	* In deep learning, this is usually done by gradient descent.
+---
+# Theano for Deep Learning
+* [01 - Define function](#01 - Define function)
+	* [Overview](#Overview)
+	* [Step1. Define Input Variables](#Step1. Define Input Variables)
+	* [Step2. Define Output Variables](#Step2. Define Output Variables)
+	* [Step 3. Declare Function](#Step 3. Declare Function)
+	* [Step 4. Use Function](#Step 4. Use Function)
+* [02 - Compute Gradients](#02 - Compute Gradients)
+* [03 - Single Neuron](#03 - Single Neuron)
+---
 ## 01 - Define function
 ### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
