@@ -27,8 +27,8 @@ Theano is especially useful for machine learning.
 	* [Step 2. Define Output Variables](#step-2-define-output-variables)
 	* [Step 3. Declare Function](#step-3-declare-function)
 	* [Step 4. Use Function](#step-4-use-function)
-* [02 - Compute Gradients](#02--compute-gradients)
-* [03 - Single Neuron](#03--single-neuron)
+* [02 - Compute Gradients](#02-compute-gradients)
+* [03 - Single Neuron](#03-single-neuron)
 * [04 - Tiny Neural Network](#tinynn)
 * [1.语法示例](#1)
 ---
