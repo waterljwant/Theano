@@ -60,7 +60,11 @@ Line 3: declare a matrix b
 Line 4: declare a matrix c with name “ming zi”   
 The name of a variable only make difference when you try to print the variable.   
 Line 7,8,9: let’s print the three variables a, b, c to see what we get
-
+```dos
+<TensorType(float32, scalar)>
+<TensorType(float32, matrix)>
+ming zi
+```
 a, b, c are symbols without any values
 ```python?linenums
 import theano
@@ -72,11 +76,11 @@ print f(2, 3)
 print theano.pp(z)
 ```
 We will get,
-```dos?linenums
+```dos
 5.0
 (x + y)
 ```
-simplification
+Simplification
 ```python?linenums
 import theano
 import theano.tensor as T
@@ -109,10 +113,10 @@ y2 = x1 * x2
 y3 = x3 * x4
 y4 = T.dot(x3, x4)
 ```
-y1 equals to x1 plus x2
-y2 equals to x1 times x2
-y3 is the elementwise multiplication of x3 and x4
-y4 is the matrix multiplication of x3 and x4
+y1 equals to x1 plus x2.   
+y2 equals to x1 times x2.   
+y3 is the elementwise multiplication of x3 and x4.   
+y4 is the matrix multiplication of x3 and x4.   
 ### Step 3. Declare Function
 ```python
 f = theano.function([x], y)
@@ -138,7 +142,7 @@ z = f(2,4)
 print z
 ```
 
-default value and name for a function
+Default value and name for a function
 ```python?linenums
 import theano
 import theano.tensor as T
@@ -151,12 +155,11 @@ f = theano.function([x,
 print f(23, 2, weights=4)
 ```
 ### Step 4. Use Function
-Line 12: simply use the function f you declared as a normal
-python function
+Line 12: simply use the function f you declared as a normal python function    
 Line 13: Print the function output ->
 
 (The theano function output is a numpy.ndarray.)
-Examples for Matrix
+Examples for Matrix   
 Be careful that the dimensions of the input
 matrices should be correct.
 
