@@ -24,7 +24,6 @@ Theano is especially useful for machine learning.
 * [01 - Define function](#01Define_function)   
 	* [Overview](#overview)   
 	* [Step1. Define Input Variables](#Step1-Define-Input-Variables)
-	* [Step1. Define Input Variables](#StepDefineInputVariables)
 	* [Step2. Define Output Variables](#Step2. Define Output Variables)
 	* [Step 3. Declare Function](#Step 3. Declare Function)
 	* [Step 4. Use Function](#Step 4. Use Function)
@@ -36,7 +35,7 @@ Theano is especially useful for machine learning.
 
 <h2 id="01Define_function">01 - Define function</h2>
 
-### Overview(#Overview)
+### Overview
 E.g. Define a function f(x) = x2, then compute f(-2)  
 Code: [01_overview.py](https://github.com/waterljwant/Theano/blob/master/Code/01_overview.py#L1-L5)    
 ```python?linenums
